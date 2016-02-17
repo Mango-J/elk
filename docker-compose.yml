@@ -1,0 +1,11 @@
+elasticsearch:
+    build: ./elasticsearch_2.1/
+    ports:
+        - "9200:9200"
+        - "9300:9300"
+kibana:
+    build: ./kibana_4.3/
+    ports:
+        - "8081:5601"
+    links:
+        - elasticsearch
